@@ -1,0 +1,45 @@
+﻿<Page x:Class="Test123.ManagerPg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="ManagerPg">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="UserInfoTextBlock" FontSize="16" Margin="10"/>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Book Name:" />
+            <TextBox x:Name="BookName" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Year:" Width="65" />
+            <TextBox x:Name="BookYear" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Author:" Width="65" />
+            <TextBox x:Name="BookAuthor" Width="200"/>
+        </StackPanel>
+        <Button Content="Add Book" Grid.Row="4" Width="200" Click="Button_Click"/>
+
+        <DataGrid AutoGenerateColumns="False" Name="BooksGrid" Grid.Row="7"  Width="600" Height="300">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding PublishedYear}" Width="100"/>
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
